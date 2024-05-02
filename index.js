@@ -14,7 +14,6 @@ app.get("/estoque", function(req,res){
 
 
 app.get("/cadastrar/:nome?", function(req,res){
-    //req --> dados enviados pelo cliente
     var nome = req.params.nome;
     if (nome){
         res.send("<h1>produto " + nome + " cadastrado!</h1>");
@@ -35,7 +34,7 @@ app.get("/retirar/:nome?", function(req,res){
     
 })
 
-app.listen(process.env.PORT ?? 3000,function(erro){  // cria a aplicaÃ§Ã£o na porta 4000
+app.listen(process.env.PORT ?? 3000,function(erro){  
     if (erro){
         console.log("<h1> Erro ao Iniciar</h1>.");
     }else{
