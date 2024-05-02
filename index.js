@@ -1,19 +1,18 @@
-const express = require("express"); //importa o mÃ³dulo express neste arquivo
-const app = express(); //iniciando o express
+const express = require("express"); 
+const app = express(); 
 
-//criando a rota inicial
 app.get("/", function(req,res){
     res.send("<h1>Bem vindo ao ESTOQUE!</h1>");
 })
 
-//rota do cadastro de produtos
+ 
 app.get("/estoque", function(req,res){
     res.send("<h1>Lista de estoque!</h1> <h2> <br> Arroz branco : 10 unid </h2> <h2> <br> Banana: 30 unid</h2> <h2> <br> ovos: 60 unid </h2>");
      
 
 })
 
-//rota com parametro opcional
+
 app.get("/cadastrar/:nome?", function(req,res){
     //req --> dados enviados pelo cliente
     var nome = req.params.nome;
@@ -26,7 +25,7 @@ app.get("/cadastrar/:nome?", function(req,res){
 })
 
 app.get("/retirar/:nome?", function(req,res){
-    //req --> dados enviados pelo cliente
+    
     var nome = req.params.nome;
     if (nome){
         res.send("<h1>produto " + nome + " retirado!</h1>");
@@ -38,8 +37,8 @@ app.get("/retirar/:nome?", function(req,res){
 
 app.listen(process.env.PORT ?? 3000,function(erro){  // cria a aplicaÃ§Ã£o na porta 4000
     if (erro){
-        console.log("Erro ao Iniciar.");
+        console.log("<h1> Erro ao Iniciar</h1>.");
     }else{
-        console.log("Servidor Iniciado.");
+        console.log(" <h1> Servidor Iniciado. </h1>");
     }
 })
